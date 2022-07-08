@@ -5,6 +5,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:testproject/components/h_scaffold.dart';
 import 'package:testproject/stats/stats.dart';
 import 'package:testproject/main/nav_sidebar.dart';
 
@@ -22,13 +23,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.grey,
+          // backgroundColor: Colors.grey,
+          backgroundColor: Colors.orangeAccent,
           foregroundColor: Colors.white,
         ),
         // useMaterial3: true,
         canvasColor: Colors.white,
         drawerTheme: DrawerThemeData(
           backgroundColor: Colors.grey[200],
+          // backgroundColor: Colors.orangeAccent
         )
       ),
       home: Main(),             // REMOVE Scaffold
@@ -39,12 +42,8 @@ class MyApp extends StatelessWidget {
 class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
-      appBar: AppBar(title: Text("DISPLAY")),
-      // drawer: NavSidebar(),
-      body: FilledCardExample(),
-      // body: NavSidebar()
+    return HScaffold(
+        body: FilledCardExample()
     );
   }
 }
