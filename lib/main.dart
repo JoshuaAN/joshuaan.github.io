@@ -5,9 +5,11 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:testproject/components/h_card.dart';
 import 'package:testproject/components/h_scaffold.dart';
-import 'package:testproject/stats/stats.dart';
-import 'package:testproject/main/nav_sidebar.dart';
+import 'package:testproject/constants.dart';
+import 'package:testproject/pages/stats.dart';
+// import 'package:testproject/main/nav_sidebar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,20 +21,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(          // MODIFY with const
-      title: 'Test word generator',
+      title: 'fake title',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          // backgroundColor: Colors.grey,
-          backgroundColor: Colors.orangeAccent,
-          foregroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: kTertiaryColor,
+          foregroundColor: Colors.orangeAccent,
         ),
-        // useMaterial3: true,
-        canvasColor: Colors.white,
-        drawerTheme: DrawerThemeData(
-          backgroundColor: Colors.grey[200],
-          // backgroundColor: Colors.orangeAccent
-        )
+        canvasColor: kSecondaryColor,
+        drawerTheme: const DrawerThemeData(
+          backgroundColor: kPrimaryColor,
+        ),
       ),
       home: Main(),             // REMOVE Scaffold
     );
@@ -43,7 +42,19 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HScaffold(
-        body: FilledCardExample()
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            FilledCardExample(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                FilledCardExample(),
+                FilledCardExample()
+              ]
+            )
+          ]
+        )
     );
   }
 }
@@ -54,53 +65,46 @@ class FilledCardExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15)
-        ),
-        elevation: 5,
-        color: Colors.grey[100],
-        child: SizedBox(
-          width: 500,
-          height: 300,
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(25),
-              child: LineChart(
-                LineChartData(
-                  minX: 0,
-                  maxX: 10,
-                  minY: 0,
-                  maxY: 5,
-                  lineBarsData: [
-                    LineChartBarData(
-                      colors: [Colors.red],
-                      spots: [
-                        FlSpot(0, 0),
-                        FlSpot(2, 1),
-                        FlSpot(3, 4),
-                        FlSpot(5, 2),
-                        FlSpot(8, 3),
-                        FlSpot(10, 2),
-                      ]
-                    ),
-                    LineChartBarData(
-                      colors: [Colors.blue],
-                      spots: [
-                        FlSpot(0, 0),
-                        FlSpot(2, 3),
-                        FlSpot(3, 2),
-                        FlSpot(5, 4),
-                        FlSpot(8, 3),
-                        FlSpot(10, 3),
-                      ]
-                    ),
-                    LineChartBarData(
+      child: HCard(
+        width: 30,
+        height: 20,
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(25),
+            child: LineChart(
+              LineChartData(
+                minX: 0,
+                maxX: 10,
+                minY: 0,
+                maxY: 5,
+                lineBarsData: [
+                  LineChartBarData(
+                    colors: [Colors.red],
+                    spots: [
+                      FlSpot(0, 0),
+                      FlSpot(2, 1),
+                      FlSpot(3, 4),
+                      FlSpot(5, 2),
+                      FlSpot(8, 3),
+                      FlSpot(10, 2),
+                    ]
+                  ),
+                  LineChartBarData(
+                    colors: [Colors.blue],
+                    spots: [
+                      FlSpot(0, 0),
+                      FlSpot(2, 3),
+                      FlSpot(3, 2),
+                      FlSpot(5, 4),
+                      FlSpot(8, 3),
+                      FlSpot(10, 3),
+                    ]
+                  ),
+                  LineChartBarData(
 
-                    )
-                  ]
-                )
-              ),
+                  )
+                ]
+              )
             ),
           ),
         ),
