@@ -25,11 +25,10 @@ class Team extends StatelessWidget {
                     Expanded(
                       child: Padding(
                         padding: EdgeInsets.fromLTRB(25,25,12.5,12.5),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            // shape: BoxShape.rectangle.x,
-                            borderRadius: BorderRadius.circular(25),
-                            color: kPrimaryColor,
+                        child: Card(
+                          color: kPrimaryColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
                           ),
                           child: Padding(
                             padding: EdgeInsets.all(kPadding),
@@ -41,30 +40,28 @@ class Team extends StatelessWidget {
                     Expanded(
                       child: Padding(
                         padding: EdgeInsets.fromLTRB(25,12.5,12.5,25),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            // shape: BoxShape.rectangle.x,
-                            borderRadius: BorderRadius.circular(25),
-                            color: kPrimaryColor,
+                        child: Card(
+                          color: kPrimaryColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
                           ),
                           child: Padding(
                             padding: EdgeInsets.all(kPadding),
                             child: PitInfo()
                           )
-                        ),
+                        )
                       )
-                    ),
+                    )
                   ]
                 ),
               ),
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(12.5,25,25,25),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      // shape: BoxShape.rectangle.x,
-                      borderRadius: BorderRadius.circular(25),
-                      color: kPrimaryColor,
+                  child: Card(
+                    color: kPrimaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
                     ),
                     child: Padding(
                       padding: EdgeInsets.all(kPadding),
