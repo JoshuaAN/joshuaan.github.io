@@ -12,7 +12,7 @@ class HScaffold extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "KORN SCOUTING",
+          "HELIX SCOUTING",
           style: TextStyle(fontWeight: FontWeight.bold)
         ),
         // title: HSearch()

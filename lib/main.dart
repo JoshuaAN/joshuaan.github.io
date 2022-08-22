@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(          // MODIFY with const
-      title: 'Korn Scouting',
+      title: 'Helix Scouting',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
@@ -57,7 +57,7 @@ class Main extends StatelessWidget {
         // )
       body: Center(
         child: Text(
-          "KORN",
+          "HELIX",
           style: TextStyle(
             color: kPrimaryColor,
             fontSize: 400

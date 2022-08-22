@@ -165,11 +165,17 @@ class _DropdownState extends State<Dropdown> {
         ]
       );
     } else if (val == 'Teleop') {
-      return Text("");
+      return Row(
+        children: [
+          Text("High   ", style: TextStyle(color: Colors.green)),
+          Text("Low   ", style: TextStyle(color: Colors.yellowAccent)),
+          Text("Missed", style: TextStyle(color: Colors.red)),
+        ]
+      );
     } else if (val == 'Endgame') {
       return Text("");
     } else {
-      return Text("");
+      return Text("Points Scored", style: TextStyle(color: kComplementaryColor));
     }
   }
 
@@ -185,7 +191,7 @@ class _DropdownState extends State<Dropdown> {
     } else if (val == 'Teleop') {
       return HChart(
         xAxis: [1, 2, 5, 6],
-        yAxis: [[20, 23, 18, 20],[5, 6, 14, 7]],
+        yAxis: [[20, 17, 18, 19],[5, 6, 18, 7]],
         // xAxis: [1, 2],
         // yAxis: [[23, 20], [5, 6]],
         maxY: 28,
@@ -193,7 +199,7 @@ class _DropdownState extends State<Dropdown> {
     } else if (val == 'Endgame') {
       return HChart(
         xAxis: [1, 2, 5, 6],
-        yAxis: [[20, 23, 18, 20],[5, 6, 14, 7]],
+        yAxis: [[20, 24, 15, 23],[5, 6, 14, 7]],
         // xAxis: [1, 2],
         // yAxis: [[23, 20], [5, 6]],
         maxY: 28,
@@ -201,11 +207,11 @@ class _DropdownState extends State<Dropdown> {
     } else {
       return HChart(
         xAxis: [1, 2, 5, 6],
-        yAxis: [[20, 23, 18, 20],[5, 6, 14, 7]],
+        yAxis: [[20, 15, 23, 22]],
         // xAxis: [1, 2],
         // yAxis: [[23, 20], [5, 6]],
         maxY: 28,
-        colors: [Colors.green, Colors.orangeAccent]);
+        colors: [kComplementaryColor]);
     }
   }
 }
