@@ -11,7 +11,10 @@ class HScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // title: Text("HELIX SCOUTING"),
+        title: Text(
+          "HELIX SCOUTING",
+          style: TextStyle(fontWeight: FontWeight.bold)
+        ),
         // title: HSearch()
         actions: [
           Padding(

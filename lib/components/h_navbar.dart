@@ -3,6 +3,7 @@ import 'package:testproject/main.dart';
 import 'package:testproject/pages/picklist.dart';
 
 import 'package:testproject/pages/stats.dart';
+import 'package:testproject/pages/team/team.dart';
 
 import '../constants.dart';
 
@@ -12,7 +13,7 @@ class HNavbar extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.2,
+      width: MediaQuery.of(context).size.width * 0.18,
       child: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -32,49 +33,55 @@ class HNavbar extends StatelessWidget{
             ),
             ListTile(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => stats()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Team()));
               },
-              title: Center(
-                child: Text(
-                  'Pick list',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: kComplementaryColor,
-                    // color: Colors.amberAccent,
-                  ),
-                )
+              leading: Icon(
+                Icons.swap_horiz,
+                color: kComplementaryColor
+              ),
+              title: Text(
+                'Pick list',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: kComplementaryColor,
+                  // color: Colors.amberAccent,
+                ),
               ),
             ),
             ListTile(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Main()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Stats()));
               },
-              title: Center(
-                child: Text(
-                  'Stats',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: kComplementaryColor,
-                  ),
-                )
+              leading: Icon(
+                Icons.show_chart,
+                color: kComplementaryColor,
+              ),
+              title: Text(
+                'Match',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: kComplementaryColor,
+                ),
               ),
             ),
             ListTile(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Picklist()));
               },
-              title: Center(
-                child: Text(
-                  'Teams',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: kComplementaryColor,
-                  ),
-                )
+              leading: Icon(
+                Icons.list,
+                color: kComplementaryColor
               ),
+              title: Text(
+                'Teams',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: kComplementaryColor,
+                ),
+              )
             ),
           ],
         ),

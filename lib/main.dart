@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(          // MODIFY with const
-      title: 'fake title',
+      title: 'Helix Scouting',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
@@ -42,19 +42,28 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HScaffold(
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            FilledCardExample(),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                FilledCardExample(),
-                FilledCardExample()
-              ]
-            )
-          ]
+        // body: Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //   children: <Widget>[
+        //     FilledCardExample(),
+        //     Column(
+        //       crossAxisAlignment: CrossAxisAlignment.center,
+        //       children: <Widget>[
+        //         FilledCardExample(),
+        //         FilledCardExample()
+        //       ]
+        //     )
+        //   ]
+        // )
+      body: Center(
+        child: Text(
+          "HELIX",
+          style: TextStyle(
+            color: kPrimaryColor,
+            fontSize: 400
+          )
         )
+      )
     );
   }
 }
